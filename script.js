@@ -29,6 +29,19 @@ function onDeleteTodo(todoId) {
   let todoElement = document.getElementById(todoId);
  
   todoItemsContainer.removeChild(todoElement);
+  let deleteItem=todoList.findIndex(function(eachtodo){
+    let eachTodoId='todo'+eachtodo.uniqueNo;
+    if(eachTodoId===todoId){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  );
+  todoList.splice(deleteItem,1);
+    
+  
 }
  
 function createAndAppendTodo(todo) {
